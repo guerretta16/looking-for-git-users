@@ -21,6 +21,7 @@ const UserCard = (props) => {
             className="bg-yellow-500 text-black text-sm py-1 px-2 font-semibold rounded-sm hover:bg-yellow-600 transition-all cursor-pointer"
             href={props.user.html_url}
             target="_blank"
+            rel="noopener noreferrer"
           >
             Visit profile
           </a>
