@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import useUser from './Hooks/UserHook';
+import { SearchForm } from './Components/SearchForm';
+import { UserCard } from './Components/UserCard';
+
 import './App.css';
 
 function App() {
+
+  const { user, isLoading, searchUser } = useUser();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex justify-center gap-9 flex-wrap items-center min-h-screen bg-black text-white">
+      <SearchForm searchUser={searchUser} />
+      <UserCard user={user} isLoading={isLoading}/>
     </div>
   );
 }
